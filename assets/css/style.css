@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap");
+
+* {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+}
+
+body {
+    width: 100vw;
+}
+
+center {
+    width: 100%;
+}
+
+#storage {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    gap: 2rem;
+}
+
+#storage > div {
+    border: transparent;
+    border-radius: 20px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+#storage > div:hover {
+    animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    transform: translate3d(0, 0, 0);
+    perspective: 1000px;
+}
+
+#storage > div:not(:hover) {
+    opacity: 0.6;
+}
+
+#storage > h4 {
+    flex-grow: 1;
+}
+
+#storage > div > div {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#storage > div > div > img {
+    height: 100px;
+}
+
+input:invalid,
+.shaker {
+    color: red;
+    animation: shake 500ms 1;
+    transition: all 1s;
+}
+
+@keyframes shake {
+    10%,
+    90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+    20%,
+    80% {
+        transform: translate3d(2px, 0, 0);
+    }
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+    40%,
+    60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}
